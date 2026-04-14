@@ -1,0 +1,12 @@
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Skills</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <h1>Skills List</h1>
+        <p th:if="${skills.length <= 0}">No hay datos</p>
+        <li th:each="skill : ${skills}" th:text="${skill}"></li>
+    </body>
+</html>
