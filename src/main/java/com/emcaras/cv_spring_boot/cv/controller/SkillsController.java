@@ -33,7 +33,7 @@ public class SkillsController {
         return "skills";
     }
 
-    @GetMapping("/{id}")
+    @GetMapping("/id/{id}")
     public String showSkillDetail(@PathVariable int id, Model model) {
         if (id >= 0 && id < this.skills.size()) {
             model.addAttribute("skill", this.skills.get(id));
@@ -42,7 +42,7 @@ public class SkillsController {
         return "redirect:/skills";
     }
     
-    @GetMapping("/{nombre}")
+    @GetMapping("/name/{nombre}")
     public String getSkillsByNombre(@PathVariable String nombre, Model model){
         List<Skill> filteredSkills = this.skills.stream()
                 .filter(skill -> skill.getName().equalsIgnoreCase(nombre)).toList();
