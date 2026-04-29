@@ -1,6 +1,7 @@
 package com.emcaras.cv_spring_boot.cv.controller;
 
 import com.emcaras.cv_spring_boot.cv.model.Person;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -8,11 +9,14 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 @RequestMapping("/cv") //ruta base
+@RequiredArgsConstructor
 public class CvController {
-    
+
+    private final Person person;
+
     @GetMapping({"", "/", "/index"})
     public String index(Model model){
-        Person person = new Person("Em", "Carranza", "Engineer");
+        //Person person = new Person("Em", "Carranza", "Engineer");
         model.addAttribute("person", person);
         return "index";
     }
