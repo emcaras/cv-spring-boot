@@ -39,7 +39,7 @@ public class SkillsController {
             model.addAttribute("skill", this.skills.get(id));
             return "skill-detail";
         }
-        return "redirect:/skills";
+        return "forward:/skills";
     }
     
     @GetMapping("/name/{nombre}")
